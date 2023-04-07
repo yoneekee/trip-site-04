@@ -123,20 +123,20 @@
   }
 
   .result {
-    margin-top:25px;
+    margin-top:40px;
 
     .card {
       position: relative;
-      margin : 15px 0;
+      margin : 25px 0;
   
       .package_result {
         display: flex;
         align-items: center;
         justify-self: center;
-        gap:20px;
+        gap:80px;
     
         img {
-          width:15vw;
+          width:20vw;
           height: 30vh;
           object-fit: cover;
         }
@@ -161,8 +161,8 @@
   
       .checkBox {
         position: absolute;
-        bottom:10px;
-        right:10px;
+        bottom:15px;
+        right:15px;
   
         input {
           width:30px;

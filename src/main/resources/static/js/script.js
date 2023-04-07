@@ -13,6 +13,19 @@ const swiper = new Swiper(".discount-banner", {
   },
 });
 
+const picker01 = new Lightpick({
+  field: document.querySelector("#datepicker01"),
+  format: "YYYY/MM/DD",
+});
+const picker02 = new Lightpick({
+  field: document.querySelector("#datepicker02"),
+  format: "YYYY/MM/DD",
+});
+const picker03 = new Lightpick({
+  field: document.querySelector("#datepicker03"),
+  format: "YYYY/MM/DD",
+});
+
 const btnTop = document.querySelector(".btn-top");
 btnTop.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
