@@ -299,7 +299,8 @@ h2 {
   top: 0;
   left: 0;
   background-color: rgba(255, 0, 0, 0.85);
-  width: 100px;
+  width: 110px;
+  padding: 2px;
   border-radius: 20px;
   z-index: 9999;
   text-align: center;
@@ -317,28 +318,28 @@ h2 {
   color: var(--black);
 }
 .mapLink .pointer .city_01 {
-  top: 95%;
+  top: 90%;
   left: 45%;
 }
 .mapLink .pointer .city_02 {
-  top: 120%;
+  top: 115%;
   left: 85%;
 }
 .mapLink .pointer .city_03 {
-  top: 250px;
-  left: 300px;
+  top: 75%;
+  left: 17%;
 }
 .mapLink .pointer .city_04 {
-  top: 300px;
-  left: 350px;
+  top: 115%;
+  left: 55%;
 }
 .mapLink .pointer .city_05 {
-  top: 350px;
-  left: 400px;
+  top: 125%;
+  left: 63%;
 }
 .mapLink .pointer .city_06 {
-  top: 400px;
-  left: 450px;
+  top: 700px;
+  left: 700px;
 }
 .mapLink .wrap {
   width: 100%;
