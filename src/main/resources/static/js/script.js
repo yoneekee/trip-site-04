@@ -13,18 +13,7 @@ const swiper = new Swiper(".discount-banner", {
   },
 });
 
-const picker01 = new Lightpick({
-  field: document.querySelector("#datepicker01"),
-  format: "YYYY/MM/DD",
-});
-const picker02 = new Lightpick({
-  field: document.querySelector("#datepicker02"),
-  format: "YYYY/MM/DD",
-});
-const picker03 = new Lightpick({
-  field: document.querySelector("#datepicker03"),
-  format: "YYYY/MM/DD",
-});
+
 
 const btnTop = document.querySelector(".btn-top");
 btnTop.addEventListener("click", function () {
@@ -41,6 +30,8 @@ window.addEventListener("scroll", function (e) {
     btnTop.classList.remove("on");
   }
 });
+
+
 
 $(".sessionCheck").on("click", function () {
   if (session == null) {
@@ -110,6 +101,19 @@ $("#btnDeleteConfirm").on("click", function (e) {
       }
     },
   });
+});
+
+const picker01 = new Lightpick({
+  field: document.querySelector("#datepicker01"),
+  format: "YYYY/MM/DD",
+});
+const picker02 = new Lightpick({
+  field: document.querySelector("#datepicker02"),
+  format: "YYYY/MM/DD",
+});
+const picker03 = new Lightpick({
+  field: document.querySelector("#datepicker03"),
+  format: "YYYY/MM/DD",
 });
 
 /*
