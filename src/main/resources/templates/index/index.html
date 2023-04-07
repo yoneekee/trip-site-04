@@ -4,7 +4,7 @@
                 xmlns="http://www.thymeleaf.org"
                 layout:decorate="~{/layout/layout.html}">
 <head>
-  <title>REPLYBOARD</title>
+  <title>Stellar Tour</title>
 </head>
 <body>
   <div layout:fragment="contents">
@@ -74,9 +74,17 @@
       <!-- promotion end -->
 
       <!-- map start -->
-      <section class="map container1">
-        <h1 class="pointer">도시 별로 a 태그 찍을 예정</h1>
-        <div class="wrap"><img src="/images/higashi_map.png" alt=""></div>
+      <section class="mapLink container1">
+        <div class="pointer" >
+          <!-- 수도 부분에 효과 -->
+          <a href="#" class="city_link city_01 capital">Seoul</a>
+          <a href="#" class="city_link city_02 capital">Tokyo</a>
+          <a href="#" class="city_link city_03 capital">Beijing</a>
+          <a href="#" class="city_link city_04">Seoul</a>
+          <a href="#" class="city_link city_05">Tokyo</a>
+          <a href="#" class="city_link city_06">Beijing</a>
+        </div>
+        <div class="wrap"><img src="/images/higashi_map.png" alt="" usemap = "#mapname"></div>
       </section>
       <!-- map end -->
 

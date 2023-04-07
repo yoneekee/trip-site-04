@@ -280,28 +280,72 @@ h2 {
 }
 
 /************ promotion end ************/
-.map {
+.mapLink {
   width: 100%;
   margin-top: 80px;
   position: relative;
+  font-weight: 700;
 }
-.map .pointer {
+.mapLink .pointer {
   position: absolute;
-  font-size: 48px;
-  top: 10px;
-  left: 10px;
-  color: var(--white);
-  z-index: 100;
+  width: 100%;
+  height: 650px;
+  top: 0;
+  left: 0;
 }
-.map .wrap {
+.mapLink .pointer .city_link {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.85);
+  width: 100px;
+  border-radius: 20px;
+  z-index: 9999;
+  text-align: center;
+  transition: all ease 0.2s;
+}
+.mapLink .pointer .city_link:hover {
+  transform: scale(1.2);
+  color: var(--white);
+}
+.mapLink .pointer .capital {
+  background-color: rgba(255, 234, 0, 0.85);
+}
+.mapLink .pointer .capital:hover {
+  transform: scale(1.4);
+  color: var(--black);
+}
+.mapLink .pointer .city_01 {
+  top: 95%;
+  left: 45%;
+}
+.mapLink .pointer .city_02 {
+  top: 120%;
+  left: 85%;
+}
+.mapLink .pointer .city_03 {
+  top: 250px;
+  left: 300px;
+}
+.mapLink .pointer .city_04 {
+  top: 300px;
+  left: 350px;
+}
+.mapLink .pointer .city_05 {
+  top: 350px;
+  left: 400px;
+}
+.mapLink .pointer .city_06 {
+  top: 400px;
+  left: 450px;
+}
+.mapLink .wrap {
   width: 100%;
   position: relative;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.map .wrap img {
+.mapLink .wrap img {
   width: 100%;
   margin: 0 auto;
 }

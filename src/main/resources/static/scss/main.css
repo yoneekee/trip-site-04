@@ -283,29 +283,50 @@ h2 {
 }
 
 /************ promotion end ************/
-.map {
+.mapLink {
   width: 100%;
   margin-top: 80px;
   position: relative;
 }
-.map .pointer {
+.mapLink .pointer {
   position: absolute;
-  font-size: 48px;
-  top: 10px;
-  left: 10px;
-  color: var(--white);
-  z-index: 100;
+  top: 0;
+  left: 0;
 }
-.map .wrap {
-  width: 100%;
+.mapLink .pointer .city_link {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: red;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+.mapLink .pointer .city_link:hover {
+  transform: scale(1.2);
+}
+.mapLink .pointer .city_01 {
+  color: red;
+  top: 50px;
+  left: 100px;
+}
+.mapLink .pointer .city_02 {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+}
+.mapLink .pointer .city_03 {
+  position: absolute;
+  top: 250px;
+  left: 300px;
+}
+.mapLink .wrap {
+  width: 20%;
   position: relative;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.map .wrap img {
-  width: 100%;
+.mapLink .wrap img {
+  width: 20%;
   margin: 0 auto;
 }
 
@@ -566,4 +587,4 @@ h2 {
   right: -50px;
 }
 
-/************ discount 끝 **************//*# sourceMappingURL=main.css.map */
+/************ discount 끝 **************/
