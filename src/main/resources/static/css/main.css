@@ -70,6 +70,12 @@
   font-size: 24px;
 }
 
+/*********** reservation ***********/
+.reserv_custom_info .form-label {
+  display: block;
+  text-align: left;
+}
+
 /******* join / login ********/
 .joinFileBtn:hover {
   background-color: #ddd;

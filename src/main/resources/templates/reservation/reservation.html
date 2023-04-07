@@ -14,134 +14,138 @@
       id="contents"
       layout:fragment="contents"
     >
-      <div id="sending">
+      <div id="boardSending">
         <form action="/reservProcess" method="POST" >
           <input
             type="hidden"
             name="customerNo"
             th:value="${session.loggedMember.no}"
           />
-          <div id="sending">
+         
             <h2>Reservation</h2>
-            <h3>Customer Information</h3>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Name</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Name"
-                name="reservName"
-                th:value="${session.loggedMember.userName}"
-              />
+            <div class="mt-5 reserv_custom_info">
+              <h3>Customer Information</h3>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Name"
+                  name="reservName"
+                  th:value="${session.loggedMember.userName}"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Birth Date</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker01"
+                  placeholder="YYYY/MM/DD"
+                  name="reservBday"
+                  th:value="${session.loggedMember.userBday}"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Passport Number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Passport Number"
+                  name="reservPassport"
+                  th:value="${session.loggedMember.passport}"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="example@stellar.com"
+                  name="reservEmail"
+                  th:value="${session.loggedMember.email}"
+                />
+              </div>
             </div>
-            <div class="mb-3">
+            <div class="mt-5 package_item">
+              <h3>Search Package Items</h3>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Departure Date</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker02"
+                  placeholder="YYYY/MM/DD"
+                  name="pkgDepart"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Return Date</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="datepicker03"
+                  placeholder="YYYY/MM/DD"
+                  name="pkgArrival"
+                />
+              </div>
               <label for="exampleFormControlInput1" class="form-label"
-                >Birth Date</label
+                >Region</label
               >
-              <input
-                type="text"
-                class="form-control"
-                id="datepicker01"
-                placeholder="YYYY/MM/DD"
-                name="reservBday"
-                th:value="${session.loggedMember.userBday}"
-              />
-            </div>
-            <div class="mb-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                name="pkgRegion"
+              >
+                <option selected>Select Region</option>
+                <option value="korea">South Korea</option>
+                <option value="japan">Japan</option>
+                <option value="china">China</option>
+              </select>
               <label for="exampleFormControlInput1" class="form-label"
-                >Passport Number</label
+                >Minimum Budget per One Person</label
               >
-              <input
-                type="text"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Passport Number"
-                name="reservPassport"
-                th:value="${session.loggedMember.passport}"
-              />
-            </div>
-            <div class="mb-3">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                name="minBudget"
+              >
+                <option selected>Select Minimum Budget</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+                <option value="3000">3000</option>
+              </select>
               <label for="exampleFormControlInput1" class="form-label"
-                >Email Address</label
+                >Maximum Budget per One Person</label
               >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="example@stellar.com"
-                name="reservEmail"
-                th:value="${session.loggedMember.passport}"
-              />
-            </div>
-            <h3>Search Package Items</h3>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Departure Date</label
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                name="maxBudget"
               >
-              <input
-                type="text"
-                class="form-control"
-                id="datepicker02"
-                placeholder="YYYY/MM/DD"
-                name="pkgDepart"
-              />
+                <option selected>Select Maximum Budget</option>
+                <option value="5000">5000</option>
+                <option value="6000">6000</option>
+                <option value="7000">7000</option>
+              </select>
+              <button class="btn btn-warning btnSearch">Search</button>
+              <div>
             </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Return Date</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="datepicker03"
-                placeholder="YYYY/MM/DD"
-                name="pkgArrival"
-              />
-            </div>
-            <label for="exampleFormControlInput1" class="form-label"
-              >Region</label
-            >
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              name="pkgRegion"
-            >
-              <option selected>Select Region</option>
-              <option value="korea">South Korea</option>
-              <option value="japan">Japan</option>
-              <option value="china">China</option>
-            </select>
-            <label for="exampleFormControlInput1" class="form-label"
-              >Minimum Budget per One Person</label
-            >
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              name="minBudget"
-            >
-              <option selected>Select Minimum Budget</option>
-              <option value="1000">1000</option>
-              <option value="2000">2000</option>
-              <option value="3000">3000</option>
-            </select>
-            <label for="exampleFormControlInput1" class="form-label"
-              >Maximum Budget per One Person</label
-            >
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              name="maxBudget"
-            >
-              <option selected>Select Maximum Budget</option>
-              <option value="5000">5000</option>
-              <option value="6000">6000</option>
-              <option value="7000">7000</option>
-            </select>
-            <button class="btn btn-warning btnSearch">Search</button>
-            <div>
               <button type="button confirm" class="btn btn-primary btn-lg">
                 Submit
               </button>
@@ -149,7 +153,7 @@
                 Reset
               </button>
             </div>
-          </div>
+          
         </form>
       </div>
 
