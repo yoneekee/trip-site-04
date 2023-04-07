@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  layout:decorate="~{/layout/layout.html}"
+>
+  <head>
+    <title>ADMIN PACKAGE FORM</title>
+  </head>
+  <body>
+    <div
+      class="container1 formContainer"
+      id="contents"
+      layout:fragment="contents"
+    >
+      <form action="/admin/insertPkg" method="post" class="container1">
+        <div id="sending">
+          <h2>ADD NEW PACKAGE</h2>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Package Name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Name"
+              name="pkgName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Package Contents</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="7"
+              name="pkgContents"
+            ></textarea>
+          </div>
+          <label for="exampleFormControlInput1" class="form-label"
+            >Package Region</label
+          >
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="pkgRegion"
+          >
+            <option selected>Select Region</option>
+            <option value="korea">South Korea</option>
+            <option value="japan">Japan</option>
+            <option value="china">China</option>
+          </select>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Departure Date</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="datepicker01"
+              placeholder="YYYY/MM/DD"
+              name="pkgDepart"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Return Date</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="datepicker02"
+              placeholder="YYYY/MM/DD"
+              name="pkgArrival"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Package Budget</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Package Budget"
+              name="pkgBudget"
+            />
+          </div>
+
+          <div>
+            <button type="button confirm" class="btn btn-primary btn-lg">
+              Submit
+            </button>
+            <button type="button reset" class="btn btn-secondary btn-lg">
+              Reset
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        const picker01 = new Lightpick({
+          field: document.querySelector("#datepicker01"),
+          format: "YYYY/MM/DD",
+        });
+        const picker02 = new Lightpick({
+          field: document.querySelector("#datepicker02"),
+          format: "YYYY/MM/DD",
+        });
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <typeAliases>
+    <typeAlias alias="MemberDto" type="com.bb.voyage.dto.MemberDto" />
+    <typeAlias alias="FreeBoardDto" type="com.bb.voyage.dto.FreeBoardDto" />
+    <typeAlias alias="VipBoardDto" type="com.bb.voyage.dto.VipBoardDto" />
+    <typeAlias alias="ReservDto" type="com.bb.voyage.dto.ReservDto" />
+    <typeAlias alias="PkgDto" type="com.bb.voyage.dto.PkgDto" />
+  </typeAliases>
+</configuration>

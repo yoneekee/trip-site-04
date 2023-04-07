@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  layout:decorate="~{/layout/layout.html}"
+>
+  <head>
+    <title>FREEBOARD</title>
+  </head>
+  <body>
+    <div
+      class="container formContainer"
+      id="contents"
+      layout:fragment="contents"
+    >
+      <div id="boardSending">
+        <h2>Free Board</h2>
+        <table class="table">
+          <colgroup>
+            <col style="width: 25%; background-color: #eee" class="font900" />
+            <col style="width: 75%" />
+          </colgroup>
+          <tr>
+            <th>Title</th>
+            <td th:text="${freeBoardDto.freeTitle}"></td>
+          </tr>
+          <tr>
+            <th>Writer</th>
+            <td th:text="${memberDto.userNickname}"></td>
+          </tr>
+
+          <tr>
+            <th>Date</th>
+            <td th:text="${freeBoardDto.freeRegDate}"></td>
+          </tr>
+
+          <tr class="boardContents">
+            <th>Contents</th>
+            <td th:text="${freeBoardDto.freeContents}"></td>
+          </tr>
+        </table>
+
+        <div class="joinBtn">
+          <td>
+            <a
+              href=""
+              class="btn btn-primary sessionCheck"
+              th:href="@{/board/freeboardmodify(no=${freeBoardDto.freeNo})}"
+              >Modify</a
+            >
+          </td>
+          <td>
+            <a
+              href=""
+              class="btn btn-danger"
+              id="btnDeleteBoardAjax"
+              th:href="@{/board/freeboarddelete(no=${freeBoardDto.freeNo})}"
+              >Delete</a
+            >
+          </td>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

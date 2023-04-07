@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bb.voyage.dao.BoardDao">
+  <insert id="insertFreeBoard" parameterType="FreeBoardDto">
+    INSERT INTO FREEBOARD VALUES (
+      FREEBOARD_SEQ.NEXTVAL,
+      #{freeWriterNo},
+      #{freeTitle},
+      #{freeContents},
+      SYSDATE,
+      1,
+      0,
+      0,
+      0,
+      0
+    )
+  </insert>
+  <select id="getAllFree" resultType="FreeBoardDto">
+    SELECT * FROM FREEBOARD WHERE FREEAVAILABLE = 1
+  </select>
+  <select id="getOneFree" resultType="FreeBoardDto" parameterType="Integer">
+    SELECT * FROM FREEBOARD WHERE FREENO = #{freeNo} AND FREEAVAILABLE = 1
+  </select> 
+  <select id="getMemberInfo" resultType="MemberDto" parameterType="Integer">
+    SELECT * FROM MEMBER WHERE NO = (SELECT NO FROM MEMBER WHERE NO = (SELECT FREEWRITERNO FROM FREEBOARD WHERE FREENO = #{no}))
+  </select>
+
+  <update id="modifyFreeBoard" parameterType="FreeBoardDto">
+    UPDATE FREEBOARD SET FREETITLE = #{freeTitle}, FREECONTENTS = #{freeContents} WHERE FREENO = #{freeNo}
+  </update>
+  <update id="deleteFreeBoard" parameterType="Integer">
+    UPDATE FREEBOARD SET FREEAVAILABLE = 0 WHERE FREENO = #{freeNo}
+  </update>
+
+  <insert id="insertVipBoard" parameterType="VipBoardDto">
+    INSERT INTO VIPBOARD VALUES (
+      VIPBOARD_SEQ.NEXTVAL,
+      #{vipWriterNo},
+      #{vipTitle},
+      #{vipContents},
+      SYSDATE,
+      1,
+      0,
+      0,
+      0,
+      0
+    )
+  </insert>
+  <select id="getAllVip" resultType="VipBoardDto">
+    SELECT * FROM VIPBOARD WHERE VIPAVAILABLE = 1
+  </select>
+  <select id="getOneVip" resultType="VipBoardDto" parameterType="Integer">
+    SELECT * FROM VIPBOARD WHERE VIPNO = #{freeNo} AND VIPAVAILABLE = 1
+  </select> 
+  <update id="modifyVipBoard" parameterType="VipBoardDto">
+    UPDATE VIPBOARD SET VIPTITLE = #{vipTitle}, VIPCONTENTS = #{vipContents} WHERE VIPNO = #{vipNo}
+  </update>
+  <update id="deleteVipBoard" parameterType="Integer">
+    UPDATE VIPBOARD SET VIPAVAILABLE = 0 WHERE VIPNO = #{vipNo}
+  </update>
+  <select id="getMemberInfo02" resultType="MemberDto" parameterType="Integer">
+    SELECT * FROM MEMBER WHERE NO = (SELECT NO FROM MEMBER WHERE NO = (SELECT VIPWRITERNO FROM VIPBOARD WHERE VIPNO = #{no}))
+  </select>
+</mapper>

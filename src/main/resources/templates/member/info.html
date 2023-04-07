@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org"
+  layout:decorate="~{/layout/layout.html}"
+>
+  <head>
+    <title>LOGGED USER INFO</title>
+  </head>
+  <body>
+    <div
+      class="container formContainer"
+      id="contents"
+      layout:fragment="contents"
+      style="z-index: 99"
+    >
+      <h2>Logged User Information</h2>
+      <table class="table mt-5">
+        <colgroup>
+          <col class="th" />
+          <col class="td" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <td th:text="${session.loggedMember.userName}">userName</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td th:text="${session.loggedMember.email}">userName</td>
+          </tr>
+          <tr>
+            <th>UserId</th>
+            <td th:text="${session.loggedMember.userId}">userName</td>
+          </tr>
+          <tr>
+            <th>UserId</th>
+            <td>
+              <a href="/"><button class="btn btn-secondary">Home</button></a>
+              <a href="/member/logout"
+                ><button class="btn btn-secondary">logout</button></a
+              >
+              <a
+                href="/member/modify"
+                th:href="@{/member/modify(no=${session.loggedMember.no})}"
+                ><button class="btn btn-primary">Modify</button></a
+              >
+              <a href="/member/delete"
+                ><button class="btn btn-danger" id="btnDeleteAjax">
+                  Delete
+                </button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script th:javascript></script>
+    </div>
+  </body>
+</html>
